@@ -1,0 +1,5 @@
+#!/bin/sh
+
+sed -i s/$NEXTDOTS_SHELL_THEME/$1/ ~/dotfiles/hyprland/.config/hypr/hyprland.conf 
+
+export NEXTDOTS_SHELL_THEME="$1"

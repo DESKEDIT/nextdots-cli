@@ -1,0 +1,30 @@
+#!/bin/sh
+
+if [ "$#" -lt 1 ]; then
+  echo "$0: No arguments passed."
+  echo "Use '$0 help' for help"
+  exit 1
+fi
+
+if [ "$1" == "help" ]; then
+  echo "nextdots-cli - help"
+  echo "usage: $0 [COMMAND] [ARGUMENTS]"
+  echo "commands:"
+  echo "help: shows this dialog"
+  echo "install: installs the full dotfiles"
+  echo "changeshelltheme*: changes the shell theme"
+  echo "*requires an argument"
+  exit
+elif [ "$1" == "install" ]; then
+  nextdots.installdots
+elif [ "$1" == "changeshelltheme" ]; then
+  if [ "$#" -lt 2 ]; then
+    echo "not enough arguments provided; usage: $0 $1 [THEME]"
+    exit 2
+  fi
+  nextdots.changeshelltheme $2
+else
+  echo "$0: No arguments passed."
+  echo "Use '$0 help' for help"
+  exit 1
+fi

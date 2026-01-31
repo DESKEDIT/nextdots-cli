@@ -1,0 +1,5 @@
+#/bin/bash
+
+PATHS="./nextdots ./nextdots.changeshelltheme ./nextdots.installdots"
+
+install $PATHS /bin

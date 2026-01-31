@@ -1,0 +1,13 @@
+#git clone https://github.com/DESKEDIT/dotfiles.git ~/dotfiles
+cd ~/dotfiles
+
+echo "NEXT DOTFILES INSTALLER"
+
+echo "preparing for installation"
+rm ~/.config/hypr -r # to prevemt hyprland from blocking stow
+
+echo "installing dotfiles"
+stow alacritty bash fastfetch gtk hypridle hyprland hyprlock icons kitty neovim quickshell rofi wal waybar zsh --adopt
+hyprctl reload
+
+echo "nextdots installed. please restart hyprland for full experience"
