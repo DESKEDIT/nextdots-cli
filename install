@@ -2,4 +2,11 @@
 
 PATHS="./nextdots ./nextdots.changeshelltheme ./nextdots.installdots"
 
-install $PATHS /bin
+if [[ -v DESTDIR ]]; then
+  echo "$0: DESTDIR is set; skipping setting DESTDIR"
+else
+  DESTDIR="/bin"
+fi
+
+mkdir -p $DESTDIR
+install $PATHS $DESTDIR
